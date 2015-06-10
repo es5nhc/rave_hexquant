@@ -39,7 +39,19 @@ class TestHex(unittest.TestCase):
         """
         result = rave_hexquant.q2hex(["TH","DBZH"])
         self.assertEqual(result, '0x3')
+    def test_bitl2long(self):
+        """
+        Test bitl2long
+        """
+        result = rave_hexquant.bitl2long([5,2,1])
+        self.assertEqual(result,21L)
 
+    def test_hex2q(self):
+        """
+        Test hex2q
+        """
+        result = rave_hexquant.hex2q("0xf")
+        self.assertEqual(result,["VRADH","VRAD","TH","DBZH"])
 
 if __name__ == '__main__':
     unittest.main()
